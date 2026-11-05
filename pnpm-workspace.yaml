@@ -1,0 +1,18 @@
+packages:
+  - .
+catalogMode: strict
+catalog:
+  "@changesets/cli": "3.0.3"
+  "@types/node": "24.19.2"
+  "@usevibejs/server": "0.1.0"
+  "@vitest/coverage-v8": "5.0.5"
+  "oxfmt": "0.73.0"
+  "oxlint": "1.88.0"
+  "tsdown": "0.23.1"
+  "typescript": "7.0.2"
+  "vitest": "5.0.5"
+minimumReleaseAgeExclude:
+  - "@usevibejs/contract@0.1.0"
+  - "@usevibejs/errors@0.1.0"
+  - "@usevibejs/server@0.1.0"
+  - "@usevibejs/ui@0.1.0"

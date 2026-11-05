@@ -1,0 +1,70 @@
+{
+  "name": "@usevibejs/storage",
+  "version": "0.1.0",
+  "description": "Object storage for vibe.js. Local disk and S3-compatible drivers, including R2.",
+  "keywords": [
+    "r2",
+    "s3",
+    "storage",
+    "typescript",
+    "vibejs"
+  ],
+  "homepage": "https://github.com/vibejs/vibestorage#readme",
+  "bugs": {
+    "url": "https://github.com/vibejs/vibestorage/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vibejs/vibestorage.git"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "THIRD-PARTY-NOTICES.md"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit && node scripts/check-codes.ts",
+    "lint": "oxlint --deny-warnings",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "check": "pnpm fmt:check && pnpm lint && pnpm typecheck && pnpm test:coverage",
+    "precheck": "pnpm build",
+    "version-packages": "changeset version && pnpm install --lockfile-only"
+  },
+  "devDependencies": {
+    "@changesets/cli": "catalog:",
+    "@types/node": "catalog:",
+    "@usevibejs/server": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "oxfmt": "catalog:",
+    "oxlint": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "@usevibejs/server": "^0.1.0"
+  },
+  "engines": {
+    "node": "^24.15.0 || >=26"
+  },
+  "packageManager": "pnpm@12.14.0"
+}
